@@ -10,6 +10,9 @@
 ## Database:
 [titanic dataset](https://www.kaggle.com/datasets/yasserh/titanic-dataset)
 
+## Especificações
+https://github.com/remarchese/DSdegree/tree/master/Modulo1/Aula11%20e%20projeto
+
 ## Premissas
 Privilegiam o uso de datasets simples, ou seja, conjunto de dados usualmente didáticos (Ex. iris, diabetes, Boston House, Cars, Mnist, Wine etc)
 
