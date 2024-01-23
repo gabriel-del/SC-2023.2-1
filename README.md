@@ -8,7 +8,7 @@
 * Thomas Paiva:
 
 ## Database:
-titanic
+[titanic dataset](https://www.kaggle.com/datasets/yasserh/titanic-dataset)
 
 ## Premissas
 Privilegiam o uso de datasets simples, ou seja, conjunto de dados usualmente didáticos (Ex. iris, diabetes, Boston House, Cars, Mnist, Wine etc)
