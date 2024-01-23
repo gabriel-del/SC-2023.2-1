@@ -3,6 +3,18 @@
 ## Objetivo
 Prever se uma pessoa sobreviveria ou não
 
+## Etapas
+Tratar os dados, pegar variáveis -> Rafael, Gabriel
+tirar os nulos (n teve duplicatas) -> Lucas (ja fez)
+KNN gerar código
+plotar
+testar e ver se as previsões batem (com dados separados)
+
+# Variáveis
+
+Survived,Pclass,Sex,Age,SibSp,Parch,Fare,Embarked
+
+
 ## Tarefas
 * Lucas Meirelles:
 * Gabriel Del:
