@@ -6,8 +6,8 @@ Prever se uma pessoa sobreviveria ou não
 ## Etapas
 Tratar os dados, pegar variáveis -> Rafael, Gabriel
 tirar os nulos (n teve duplicatas) -> Lucas (ja fez)
-KNN gerar código
-plotar
+KNN gerar código -> Tainah
+plotar -> Thomas
 testar e ver se as previsões batem (com dados separados)
 
 # Variáveis
