@@ -1,5 +1,8 @@
 # Lógica de programação 2
 
+## Objetivo
+Prever se uma pessoa sobreviveria ou não
+
 ## Tarefas
 * Lucas Meirelles:
 * Gabriel Del:
