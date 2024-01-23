@@ -1,8 +1,12 @@
+final2 = []
 with open('Titanic-Dataset.csv', 'r') as f:  # garante que o arquivo será fechado corretamente quando finalizado
     lines = f.readlines()  # lê todas as linhas do aquivo e armazena na lista 'lines'
     nomes = [linha.split('"') for linha in lines]
     dados = [(nomes[c][0].split(','), [nomes[c][1]], nomes[c][2].split(',')) for c in range(1,len(nomes))]
     final = [c[0] + c[1] +c[2] for c in dados]
+for n in final:
+    final2 = [n[1], n[2], n[6], n[7], n[8], n[9], n[11]]
+    print(final2)
 
 # Survived,Pclass,Sex,Age,SibSp,Parch,Fare,Embarked
 # final[n][1] + final[n][2] + final[n][6] + final[n][7] + final[n][8] + final[n][9] + final[n][11]
