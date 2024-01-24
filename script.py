@@ -6,11 +6,17 @@ with open('Titanic-Dataset.csv', 'r') as f:  # garante que o arquivo será fecha
     final = [c[0] + c[1] +c[2] for c in dados]
 for n in final:
     if len(n) == 14:
-        lista = [n[1], n[2], n[6], n[7], n[8], n[9], n[11]]
+        lista = [n[1], [n[2], n[6], n[7], n[8], n[9], n[11]]]
+        if lista[1][1] == 'male':
+            lista[1][1] = 0 # 0 para masculino
+        if lista[1][1] == 'female':
+            lista[1][1] = 1 #1 para feminino
         final2.append(lista)
 
+    
 for n in final2:
     print(n)
+
 
 # Survived,Pclass,Sex,Age,SibSp,Parch,Fare,Embarked
 # final[n][1] + final[n][2] + final[n][6] + final[n][7] + final[n][8] + final[n][9] + final[n][11]
