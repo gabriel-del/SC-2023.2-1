@@ -1,3 +1,7 @@
+import sys, os
+sys.path.append(f'{os.path.dirname(__file__)}/../data')
+from data import *
+
 def list_train_test(data):
   import random
   data_test = data.copy()
@@ -16,13 +20,6 @@ def list_train_test(data):
   y_train = [cart[0] for cart in train_total]
 
   return X_train, X_test, y_train, y_test
-
-print(1)
-import sys
-sys.path.append('../data')
-from data import *
-# fib(8)
-print(data)
 
 
 # no_class_features = [cart[2] for cart in no_class]
