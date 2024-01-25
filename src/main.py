@@ -6,14 +6,14 @@ with open('Titanic-Dataset.csv', 'r') as f:  # garante que o arquivo será fecha
     final = [c[0] + c[1] +c[2] for c in dados] # remove as sublistas
 for n in final:
     if len(n) == 14 and n[7]!= '': #descarta as listas incompletas e com dados nulos
-        lista = [int(n[1]), [int(n[2]), n[6], float(n[7]), int(n[8]), int(n[9]), float(n[11])]] # monta uma nova lista com os dados essenciais
-        if lista[1][1] == 'male': 
-            lista[1][1] = 0 # 0 para masculino
-        if lista[1][1] == 'female':
-            lista[1][1] = 1 #1 para feminino
+        lista = [int(n[0]), int(n[1]), [int(n[2]), n[6], float(n[7]), int(n[8]), int(n[9]), float(n[11])]] # monta uma nova lista com os dados essenciais
+        if lista[2][1] == 'male': 
+            lista[2][1] = 0 # 0 para masculino
+        if lista[2][1] == 'female':
+            lista[2][1] = 1 #1 para feminino
         final2.append(lista) # lista final
 
-print('Survived,Pclass,Sex,Age,SibSp,Parch,Fare')   
+print('ID, Survived,Pclass,Sex,Age,SibSp,Parch,Fare')   
 for n in final2:
     print(n)
 
