@@ -4,7 +4,7 @@ from data import *
 from knn import *
 
 final2 = []
-with open('Titanic-Dataset.csv', 'r') as f:  # garante que o arquivo será fechado corretamente quando finalizado
+with open(f'{os.path.dirname(__file__)}/../data/Titanic-Dataset.csv', 'r') as f:  # garante que o arquivo será fechado corretamente quando finalizado
     lines = f.readlines()  # lê todas as linhas do arquivo e armazena na lista 'lines'
     nomes = [linha.split('"') for linha in lines] # usa aspas como argumento para separar o nome
     dados = [(nomes[c][0].split(','), [nomes[c][1]], nomes[c][2].split(',')) for c in range(1,len(nomes))] # usa virgula como argumento para separar o restante dos dados
