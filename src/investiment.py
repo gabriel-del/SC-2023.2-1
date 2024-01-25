@@ -1,6 +1,7 @@
 import sys, os
 sys.path.append(f'{os.path.dirname(__file__)}/../data')
 from data import *
+from knn import *
 
 def list_train_test(data):
   import random
@@ -22,22 +23,22 @@ def list_train_test(data):
   return X_train, X_test, y_train, y_test
 
 
-# no_class_features = [cart[2] for cart in no_class]
-# data_correct = [(cart[1], cart[2]) for cart in data]
+no_class_features = [cart[2] for cart in no_class]
+data_correct = [(cart[1], cart[2]) for cart in data]
 
-# X_train, X_test, y_train, y_test = list_train_test(data_correct)
+X_train, X_test, y_train, y_test = list_train_test(data_correct)
 
-# knn = KNNClass()
-# knn.fit(X_train, y_train)
+knn = KNNClass()
+knn.fit(X_train, y_train)
 
-# knn.predict(X_test) # check output
+print(knn.predict(X_test))
 
-# knn.accuracy(y_test)
+print(knn.accuracy(y_test))
 
-# definindo_noClass = knn.predict(no_class_features)
+definindo_noClass = knn.predict(no_class_features)
 
-# data_previsto = no_class.copy()
+data_previsto = no_class.copy()
 
-# for i in range(len(definindo_noClass)):
-#     data_previsto[i][1] = definindo_noClass[i]
-#     print(data_previsto[i])
+for i in range(len(definindo_noClass)):
+    data_previsto[i][1] = definindo_noClass[i]
+    print(data_previsto[i])
