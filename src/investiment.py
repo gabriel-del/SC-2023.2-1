@@ -17,23 +17,30 @@ def list_train_test(data):
 
   return X_train, X_test, y_train, y_test
 
+print(1)
+import sys
+sys.path.append('../data')
+from data import *
+# fib(8)
+print(data)
 
-no_class_features = [cart[2] for cart in no_class]
-data_correct = [(cart[1], cart[2]) for cart in data]
 
-X_train, X_test, y_train, y_test = list_train_test(data_correct)
+# no_class_features = [cart[2] for cart in no_class]
+# data_correct = [(cart[1], cart[2]) for cart in data]
 
-knn = KNNClass()
-knn.fit(X_train, y_train)
+# X_train, X_test, y_train, y_test = list_train_test(data_correct)
 
-knn.predict(X_test) # check output
+# knn = KNNClass()
+# knn.fit(X_train, y_train)
 
-knn.accuracy(y_test)
+# knn.predict(X_test) # check output
 
-definindo_noClass = knn.predict(no_class_features)
+# knn.accuracy(y_test)
 
-data_previsto = no_class.copy()
+# definindo_noClass = knn.predict(no_class_features)
 
-for i in range(len(definindo_noClass)):
-    data_previsto[i][1] = definindo_noClass[i]
-    print(data_previsto[i])
+# data_previsto = no_class.copy()
+
+# for i in range(len(definindo_noClass)):
+#     data_previsto[i][1] = definindo_noClass[i]
+#     print(data_previsto[i])
