@@ -1,3 +1,8 @@
+import sys, os
+sys.path.append(f'{os.path.dirname(__file__)}/../data')
+from data import *
+from knn import *
+
 final2 = []
 with open('Titanic-Dataset.csv', 'r') as f:  # garante que o arquivo será fechado corretamente quando finalizado
     lines = f.readlines()  # lê todas as linhas do arquivo e armazena na lista 'lines'
@@ -7,13 +12,13 @@ with open('Titanic-Dataset.csv', 'r') as f:  # garante que o arquivo será fecha
 for n in final:
     if len(n) == 14 and n[7]!= '': #descarta as listas incompletas e com dados nulos
         lista = [int(n[1]), [int(n[2]), n[6], float(n[7]), int(n[8]), int(n[9]), float(n[11])]] # monta uma nova lista com os dados essenciais
-        if lista[1][1] == 'male': 
+        if lista[1][1] == 'male':
             lista[1][1] = 0 # 0 para masculino
         if lista[1][1] == 'female':
             lista[1][1] = 1 #1 para feminino
         final2.append(lista) # lista final
 
-print('Survived,Pclass,Sex,Age,SibSp,Parch,Fare')   
+print('Survived,Pclass,Sex,Age,SibSp,Parch,Fare')
 for n in final2:
     print(n)
 
@@ -25,5 +30,3 @@ for n in final2:
 # (1,0,3,"Braund, Mr. Owen Harris",male,22,1,0,A/5 21171,7.25,,S)
 # (2,1,1,"Cumings, Mrs. John Bradley (Florence Briggs Thayer)",female,38,1,0,PC 17599,71.2833,C85,C)
 # (3,1,3,"Heikkinen, Miss. Laina",female,26,0,0,STON/O2. 3101282,7.925,,S) ]
-
-
