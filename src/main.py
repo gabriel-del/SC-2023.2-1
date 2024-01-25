@@ -28,8 +28,9 @@ from knn import *
 
 
 
-arquivo = open(f'{os.path.dirname(__file__)}/../data/Titanic-Dataset.csv', 'r')
-planilha = list(csv.reader(arquivo, delimiter=',', lineterminator='\n'))
-# print(len(planilha[0]))
-print(planilha[0])
-arquivo.close()
+with open(f'{os.path.dirname(__file__)}/../data/Titanic-Dataset.csv', 'r') as f:
+  f = list(csv.reader(f, delimiter=',', lineterminator='\n'))
+  for line in f:
+    if len(line) != len(f[0]):
+      raise Exception('Linha com colunas faltando')
+    print(line)
