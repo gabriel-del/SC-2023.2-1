@@ -25,12 +25,17 @@ def EmbarkedF(x):
   if x == 'Q': return '2'
   # if x == 'Q': return 0.5+(3**(1/2))j
   return ''
-
+def toInt(x):
+  try: return int(x)
+  except: return 0
 
 newFile = []
 with open(f'{os.path.dirname(__file__)}/../data/Titanic-Dataset.csv', 'r') as f:
   f = list(csv.reader(f, delimiter=',', lineterminator='\n'))
-  maxAge, maxSibSp, maxParch, maxFare = 80, 8, 8, 70
+  maxAge = max([toInt(line[f[0].index('Age')]) for line in f[1:]])
+  maxSibSp = max([toInt(line[f[0].index('SibSp')]) for line in f[1:]])
+  maxParch = max([toInt(line[f[0].index('Parch')]) for line in f[1:]])
+  maxFare = max([toInt(line[f[0].index('Fare')]) for line in f[1:]])
   for line in f[1:]:
     if len(line) != len(f[0]):
       raise Exception('Linha com colunas faltando')
