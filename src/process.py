@@ -2,7 +2,6 @@ import sys, os,csv
 sys.path.append(f'{os.path.dirname(__file__)}/../data')
 from data import *
 from knn import *
-# Survived,Pclass,Sex,Age,SibSp,Parch,Fare,Embarked
 
 def PclassF(x):
   if x == '3': return '0'
@@ -22,8 +21,8 @@ def FareF(x, m):
 def EmbarkedF(x):
   if x == 'C': return '0'
   if x == 'S': return '1'
-  if x == 'Q': return '2'
-  # if x == 'Q': return 0.5+(3**(1/2))j
+  if x == 'Q': return complex(0.5,3**(1/2)/2)
+  # if x == 'Q': return '2'
   return ''
 def toInt(x):
   try: return int(x)
