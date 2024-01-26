@@ -25,12 +25,3 @@ for n in final2:
 
 # Survived,Pclass,Sex,Age,SibSp,Parch,Fare,Embarked
 # final[n][1] + final[n][2] + final[n][6] + final[n][7] + final[n][8] + final[n][9] + final[n][11]
-
-
-
-# with open(f'{os.path.dirname(__file__)}/../data/Titanic-Dataset.csv', 'r') as f:
-#   f = list(csv.reader(f, delimiter=',', lineterminator='\n'))
-#   for line in f:
-#     if len(line) != len(f[0]):
-#       raise Exception('Linha com colunas faltando')
-#     print(line)
