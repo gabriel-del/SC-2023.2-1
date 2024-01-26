@@ -41,5 +41,6 @@ with open(f'{os.path.dirname(__file__)}/../data/Titanic-Dataset.csv', 'r') as f:
 
 with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'w') as f:
   writer = csv.writer(f)
+  writer.writerow(['PassengerId','Survived','Pclass','Sex','Age','SibSp','Parch','Fare','Embarked'])
   for line in newFile:
     writer.writerow(line)
