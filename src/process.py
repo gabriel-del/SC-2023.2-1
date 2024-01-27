@@ -23,7 +23,6 @@ def EmbarkedF(x):
   if x == 'S': return '1'
   # if x == 'Q': return complex(0.5,3**(1/2)/2)
   if x == 'Q': return '2'
-  return ''
 def toInt(x):
   try: return int(x)
   except: return 0
@@ -40,6 +39,7 @@ with open(f'{os.path.dirname(__file__)}/../data/Titanic-Dataset.csv', 'r') as f:
       raise Exception('Linha com colunas faltando')
     PassengerId, Survived, Pclass, Name, Sex, Age, SibSp, Parch, Ticket, Fare, Cabin, Embarked = line
     if Age == '': continue
+    if Embarked == '': continue
     newLine = [PassengerId, Survived, PclassF(Pclass), SexF(Sex), AgeF(Age, maxAge), SibSpF(SibSp, maxSibSp), ParchF(Parch, maxParch), FareF(Fare, maxFare), EmbarkedF(Embarked)]
     newFile.append(newLine)
 
