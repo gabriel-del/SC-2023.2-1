@@ -1,10 +1,16 @@
 class KNNClass():
-  def __init__(self, k=3):
+  def __init__(self, data, k=3):
     self.k = k
+    self.target_train = data[0]
+    self.target_test = data[1]
+    self.data_train = data[2]
+    self.data_test = data[3]
+    self.id_train = data[4]
+    self.id_test = data[5]
 
-  def fit(self, x, y):
-    self.X_train = x
-    self.y_train = y
+
+  def print(self):
+    print(self.id_train)
 
 
   def _euclides(self, p, Q):
