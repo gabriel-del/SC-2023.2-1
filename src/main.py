@@ -4,12 +4,22 @@ from data import *
 from knn import *
 
 
-# with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'r') as f:  # lê e fecha arquivo
-#     f = list(csv.reader(f, delimiter=',', lineterminator='\n'))
-#     # knn = KNNClass(f)
-#     id = [line[0] for line in f[1:]]
-#     target = [line[1] for line in f[1:]]
-    # data = [line[2:] for line in f[1:]]
+def separate_data(x):
+  data = x[1:].copy()
+  random.shuffle(data)
+  delimiter = int(len(data) * 0.3)
+  train = data[delimiter:]
+  test = data[:delimiter]
+
+  id_train = [line[0] for line in train]
+  id_test = [line[0] for line in test]
+  target_train = [line[1] for line in train]
+  target_test = [line[1] for line in test]
+  data_train = [line[2:] for line in train]
+  data_test = [line[2:] for line in test]
+  return [target_train, target_test, data_train, data_test, id_train, id_test]
 
 
-print(random.shuffle([1,2,3,4]))
+with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'r') as f:  # lê e fecha arquivo
+    f = list(csv.reader(f, delimiter=',', lineterminator='\n'))
+    knn = KNNClass(separate_data(f))
