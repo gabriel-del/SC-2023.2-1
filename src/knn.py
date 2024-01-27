@@ -1,12 +1,12 @@
 import random
 
 class KNNClass():
-  def __init__(self, dataset, k=5):
-    data = dataset[1:].copy()
+  def __init__(self, f, k=5):
+    data = f[1:].copy()
     random.shuffle(data)
     delimiter = int(len(data) * 0.3)
-    test = data[delimiter:]
-    train = data[:delimiter]
+    test = data[:delimiter]
+    train = data[delimiter:]
     self.target_train = [line[1] for line in train]
     self.target_test = [line[1] for line in test]
     self.data_train = [line[2:] for line in train]
@@ -32,6 +32,4 @@ class KNNClass():
 
   def accuracy(self):
     right_guess = [ x == y for x, y in zip(self.target_test_guessed, self.target_test)]
-    result = right_guess.count(True)/len(right_guess)
-    print(result)
-    return result
+    return right_guess.count(True)/len(right_guess)
