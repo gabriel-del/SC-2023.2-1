@@ -24,7 +24,7 @@ class KNNClass():
       vizinhos = target_list[:self.k]
       self.target_test_guessed.append(max(set(vizinhos), key = vizinhos.count))
     return self.target_test_guessed
-    
+
   def accuracy(self):
     right_guess = [ x == y for x, y in zip(self.target_test_guessed, self.target_test)]
     result = right_guess.count(True)/len(right_guess)

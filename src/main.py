@@ -1,6 +1,5 @@
 import sys, os,csv, random
 sys.path.append(f'{os.path.dirname(__file__)}/../data')
-from data import *
 from knn import *
 
 def separate_data(x):
@@ -18,7 +17,7 @@ def separate_data(x):
   data_test = [line[2:] for line in test]
   return [target_train, target_test, data_train, data_test, id_train, id_test]
 
-with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'r') as f:  # lê e fecha arquivo
+with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'r') as f:
     f = list(csv.reader(f, delimiter=',', lineterminator='\n'))
     knn = KNNClass(separate_data(f))
     # print(list(knn.calculate_distances(['0', '0', '0.325', '0.0', '0.0', '0.030022053231939166', '1']))[:10])
