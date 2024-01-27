@@ -7,17 +7,15 @@ class KNNClass():
     self.data_test = data[3]
     self.id_train = data[4]
     self.id_test = data[5]
-    self.data_train_result = []
-    self.data_test_result = []
+    self.target_test_guessed = []
 
   def predict(self):
-    for p in self.data_test:
+    for p in self.data_train:
       vizinhos = []
       distancias = self.calculate_distances(p)
       target_list = [target for _, target in sorted(zip(distancias, self.target_train))]
       vizinhos.append(target_list[:self.k])
-    self.data_test_result.append(max(vizinhos, key=vizinhos.count))
-
+    self.target_test_guessed.append(max(vizinhos, key=vizinhos.count))
 
   def calculate_distances(self, x):
     distances = []
@@ -33,3 +31,4 @@ class KNNClass():
         count+=1
     accuracy = count / len(y_test)
     return accuracy
+
