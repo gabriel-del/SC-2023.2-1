@@ -10,13 +10,13 @@ class KNNClass():
     self.data_train_result = []
     self.data_test_result = []
 
-  def predict2(self):
+  def predict(self):
     vizinhos = []
-    for p in data_test:
+    for p in self.data_test:
       distancias = self.calculate_distances(p, self.data_train)
       y_sorted = [y for _, y in sorted(zip(distancias, self.y_train))]
       vizinhos.append(y_sorted[:self.k])
-    knn_viz = list(map(self._most_common, vizinhos))
+    knn_viz = list(max(set(vizinhos), key=vizinhos.count))
     self.y_pred = knn_viz
     return knn_viz
 
@@ -29,26 +29,10 @@ class KNNClass():
       distances.append(d_final)
     return distances
 
-
-
-  def predict(self, X_test):
-    vizinhos = []
-    for p in X_test:
-      distancias = self._euclides(p, self.X_train)
-      y_sorted = [y for _, y in sorted(zip(distancias, self.y_train))]
-      vizinhos.append(y_sorted[:self.k])
-    knn_viz = list(map(self._most_common, vizinhos))
-    self.y_pred = knn_viz
-    return knn_viz
-
-  def _most_common(self, lst):
-    return max(set(lst), key=lst.count)
-
   def accuracy(self, y_test):
     count = 0
     for i in range(0, len(y_test)):
       if self.y_pred[i] == y_test[i]:
         count+=1
-
     accuracy = count / len(y_test)
     return accuracy
