@@ -1,15 +1,20 @@
-
+import random
 
 class KNNClass():
-  def __init__(self, data, k=5):
-    self.k = k
-    self.target_train = data[0]
-    self.target_test = data[1]
-    self.data_train = data[2]
-    self.data_test = data[3]
-    self.id_train = data[4]
-    self.id_test = data[5]
+  def __init__(self, dataset, k=5):
+    data = dataset[1:].copy()
+    random.shuffle(data)
+    delimiter = int(len(data) * 0.3)
+    test = data[delimiter:]
+    train = data[:delimiter]
+    self.target_train = [line[1] for line in train]
+    self.target_test = [line[1] for line in test]
+    self.data_train = [line[2:] for line in train]
+    self.data_test = [line[2:] for line in test]
+    self.id_train = [line[0] for line in train]
+    self.id_test = [line[0] for line in test]
     self.target_test_guessed = []
+    self.k = k
 
   def calculate_distances(self, x):
     distances = []
