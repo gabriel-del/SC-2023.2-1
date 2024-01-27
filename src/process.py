@@ -1,6 +1,5 @@
 import sys, os,csv
 sys.path.append(f'{os.path.dirname(__file__)}/../data')
-from data import *
 from knn import *
 
 def PclassF(x):
