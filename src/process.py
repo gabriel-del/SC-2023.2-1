@@ -38,9 +38,9 @@ with open(f'{os.path.dirname(__file__)}/../data/Titanic-Dataset.csv', 'r') as f:
     if len(line) != len(f[0]):
       raise Exception('Linha com colunas faltando')
     PassengerId, Survived, Pclass, Name, Sex, Age, SibSp, Parch, Ticket, Fare, Cabin, Embarked = line
-    if Age == '': continue
-    if Embarked == '': continue
-    newLine = [PassengerId, Survived, PclassF(Pclass), SexF(Sex), AgeF(Age, maxAge), SibSpF(SibSp, maxSibSp), ParchF(Parch, maxParch), FareF(Fare, maxFare), EmbarkedF(Embarked)]
+    if Age == '' or Embarked == '': continue
+    newLine = [PassengerId, Survived, PclassF(Pclass), SexF(Sex), AgeF(Age, maxAge),
+    SibSpF(SibSp, maxSibSp), ParchF(Parch, maxParch), FareF(Fare, maxFare), EmbarkedF(Embarked)]
     newFile.append(newLine)
 
 with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'w') as f:
