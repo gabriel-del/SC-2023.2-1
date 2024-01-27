@@ -20,7 +20,7 @@ class KNNClass():
   def calculate_distances(self, x):
     distances = []
     for y in self.data_train:
-      d = [abs(x_n - y_n)**2 for x_n, y_n in zip(float(x),float(y))]
+      d = [abs(float(x_n) - float(y_n))**2 for x_n, y_n in zip(x,y)]
       distances.append(sum(d) ** 0.5)
     return distances
 
@@ -31,4 +31,3 @@ class KNNClass():
         count+=1
     accuracy = count / len(y_test)
     return accuracy
-
