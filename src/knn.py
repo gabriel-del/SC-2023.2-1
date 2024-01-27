@@ -24,19 +24,12 @@ class KNNClass():
     distances = []
     for y in self.data_train:
       d = [abs(x_n - y_n)**2 for x_n, y_n in zip(float(x),float(y))]
-      sum = sum(d)
-      d_final = d_sum ** 0.5
+      sum_ds = sum(d)
+      d_final = sum_ds ** 0.5
       distances.append(d_final)
     return distances
 
-  def _euclides(self, p, Q):
-    distances = []
-    for q in Q:
-      d = [(x_p - x_q)**2 for x_p, x_q in zip(p,q)]
-      d_sum = sum(d)
-      d_final = d_sum**0.5
-      distances.append(d_final)
-    return distances
+
 
   def predict(self, X_test):
     vizinhos = []
