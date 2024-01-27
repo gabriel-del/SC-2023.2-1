@@ -21,8 +21,8 @@ def FareF(x, m):
 def EmbarkedF(x):
   if x == 'C': return '0'
   if x == 'S': return '1'
-  # if x == 'Q': return complex(0.5,3**(1/2)/2)
-  if x == 'Q': return '2'
+  if x == 'Q': return complex(0.5,3**(1/2)/2)
+  # if x == 'Q': return '2'
 def toInt(x):
   try: return int(x)
   except: return 0

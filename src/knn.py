@@ -20,7 +20,7 @@ class KNNClass():
   def calculate_distances(self, x):
     distances = []
     for y in self.data_train:
-      d = [(float(x_n) - float(y_n))**2 for x_n, y_n in zip(x,y)]
+      d = [(abs(complex(x_n) - complex(y_n)))**2 for x_n, y_n in zip(x,y)]
       distances.append(sum(d) ** 0.5)
     return sorted(zip(distances, self.id_train, self.target_train))
 
