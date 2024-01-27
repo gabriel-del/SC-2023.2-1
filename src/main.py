@@ -23,4 +23,5 @@ def separate_data(x):
 with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'r') as f:  # lê e fecha arquivo
     f = list(csv.reader(f, delimiter=',', lineterminator='\n'))
     knn = KNNClass(separate_data(f))
-    knn.print()
+    # knn.print()
+    print(knn.data_train)
