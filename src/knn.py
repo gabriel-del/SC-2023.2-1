@@ -11,22 +11,19 @@ class KNNClass():
     self.data_test_result = []
 
   def predict(self):
-    vizinhos = []
     for p in self.data_test:
-      distancias = self.calculate_distances(p, self.data_train)
-      y_sorted = [y for _, y in sorted(zip(distancias, self.y_train))]
-      vizinhos.append(y_sorted[:self.k])
-    knn_viz = list(max(set(vizinhos), key=vizinhos.count))
-    self.y_pred = knn_viz
-    return knn_viz
+      vizinhos = []
+      distancias = self.calculate_distances(p)
+      target_list = [target for _, target in sorted(zip(distancias, self.target_train))]
+      vizinhos.append(target_list[:self.k])
+    self.data_test_result.append(max(vizinhos, key=vizinhos.count))
+
 
   def calculate_distances(self, x):
     distances = []
     for y in self.data_train:
       d = [abs(x_n - y_n)**2 for x_n, y_n in zip(float(x),float(y))]
-      sum_ds = sum(d)
-      d_final = sum_ds ** 0.5
-      distances.append(d_final)
+      distances.append(sum(d) ** 0.5)
     return distances
 
   def accuracy(self, y_test):

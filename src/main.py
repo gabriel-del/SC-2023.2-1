@@ -25,4 +25,4 @@ with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'r') as 
     knn = KNNClass(separate_data(f))
     # knn.print()
     # print(knn.data_train)
-    knn.calculate_distances()
+    knn.predict()
