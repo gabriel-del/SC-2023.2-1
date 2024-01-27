@@ -10,10 +10,24 @@ class KNNClass():
     self.data_train_result = []
     self.data_test_result = []
 
+  def predict2(self):
+    vizinhos = []
+    for p in data_test:
+      distancias = self.calculate_distances(p, self.data_train)
+      y_sorted = [y for _, y in sorted(zip(distancias, self.y_train))]
+      vizinhos.append(y_sorted[:self.k])
+    knn_viz = list(map(self._most_common, vizinhos))
+    self.y_pred = knn_viz
+    return knn_viz
 
-  # def calculate(self, x):
-    # for array in self.data_train:
-      # d = [(x_p - x_q)**2 for x_p, x_q in zip(,q)]
+  def calculate_distances(self, x):
+    distances = []
+    for y in self.data_train:
+      d = [abs(x_n - y_n)**2 for x_n, y_n in zip(float(x),float(y))]
+      sum = sum(d)
+      d_final = d_sum ** 0.5
+      distances.append(d_final)
+    return distances
 
   def _euclides(self, p, Q):
     distances = []

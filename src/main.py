@@ -24,4 +24,5 @@ with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'r') as 
     f = list(csv.reader(f, delimiter=',', lineterminator='\n'))
     knn = KNNClass(separate_data(f))
     # knn.print()
-    print(knn.data_train)
+    # print(knn.data_train)
+    knn.calculate_distances()
