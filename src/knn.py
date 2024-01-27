@@ -13,11 +13,10 @@ class KNNClass():
 
   def predict(self):
     for p in self.data_test:
-      vizinhos = []
-      distancias = self.calculate_distances(p)
-      target_list = [target for _, target in sorted(zip(distancias, self.target_train))]
-      vizinhos.append(target_list[:self.k])
-      self.target_test_guessed.append(max(vizinhos, key=vizinhos.count))
+      target_list = [target for _, _,target in self.calculate_distances(p)]
+      vizinhos = target_list[:self.k]
+      self.target_test_guessed.append(max(set(vizinhos), key = vizinhos.count))
+
 
   def calculate_distances(self, x):
     distances = []

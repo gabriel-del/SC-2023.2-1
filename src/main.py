@@ -25,10 +25,10 @@ with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'r') as 
     knn = KNNClass(separate_data(f))
     # knn.print()
     # print(knn.data_train)
-    print(list(knn.calculate_distances(['0', '0', '0.325', '0.0', '0.0', '0.030022053231939166', '1']))[:10])
-    # knn.predict()
+    # print(list(knn.calculate_distances(['0', '0', '0.325', '0.0', '0.0', '0.030022053231939166', '1']))[:10])
+    knn.predict()
     # print(len(knn.target_test))
-    # print(len(knn.target_test_guessed))
+    print(knn.target_test_guessed)
 
     # print(knn.data_train)
 # for i in knn.data_train:
