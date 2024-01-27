@@ -11,13 +11,17 @@ def SexF(x):
   if x == 'male': return '0'
   if x == 'female': return '1'
 def AgeF(x, m):
-  return str(float(x) / m)
+  r = float(x) if True else m - float(x)
+  return str(r / m)
 def SibSpF(x, m):
-  return str(float(x) / m)
+  r = float(x) if True else m - float(x)
+  return str(r / m)
 def ParchF(x, m):
-  return str(float(x) / m)
+  r = float(x) if True else m - float(x)
+  return str(r / m)
 def FareF(x, m):
-  return str(float(x) / m)
+  r = float(x) if True else m - float(x)
+  return str(r / m)
 def EmbarkedF(x):
   if x == 'C': return '0'
   if x == 'S': return '1'
