@@ -1,9 +1,5 @@
 
-def toFloat(x):
-  try: return float(x)
-  except:
-    print('AAAAAAAAAAAAAA')
-    print(x)
+
 class KNNClass():
   def __init__(self, data, k=3):
     self.k = k
@@ -27,12 +23,10 @@ class KNNClass():
   def calculate_distances(self, x):
     distances = []
     for y in self.data_train:
-        # print(list(zip(x,y)))
-      print([float(i) for i in y])
-      # d = [(float(x_n) - float(y_n))**2 for x_n, y_n in zip(x,y)]
-      # distances.append(sum(d) ** 0.5)
-      # print(y)
-    # return distances
+      d = [(float(x_n) - float(y_n))**2 for x_n, y_n in zip(x,y)]
+      distances.append(sum(d) ** 0.5)
+      print(distances)
+    return distances
 
   def accuracy(self, y_test):
     count = 0
