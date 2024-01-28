@@ -10,7 +10,7 @@ with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'r') as 
         # print(list(knn.calculate_distances(['0', '0', '0.325', '0.0', '0.0', '0.030022053231939166', '1']))[:10])
         knn.predict()
         accuracy = knn.accuracy()
-        print(accuracy)
+        # print(accuracy)
         accuracies.append(accuracy)
 
 print('\nAcurácias: ')
