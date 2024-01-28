@@ -8,4 +8,4 @@ with open(f'{os.path.dirname(__file__)}/../data/Titanic-Processed.csv', 'r') as 
     knn = KNNClass(f)
     # print(list(knn.calculate_distances(['0', '0', '0.325', '0.0', '0.0', '0.030022053231939166', '1']))[:10])
     knn.predict()
-    knn.accuracy()
+    print(knn.accuracy())

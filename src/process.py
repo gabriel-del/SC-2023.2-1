@@ -3,20 +3,20 @@ sys.path.append(f'{os.path.dirname(__file__)}/../data')
 from knn import *
 
 def PclassF(x):
-  if x == '3': return '0'
+  if x == '1': return '0'
   if x == '2': return '0.5'
-  if x == '1': return '1'
+  if x == '3': return '1'
 def SexF(x):
-  if x == 'male': return '0'
-  if x == 'female': return '1'
+  if x == 'male': return '1'
+  if x == 'female': return '0'
 def AgeF(x, m):
-  return str((m - float(x)) / m)
+  return str(float(x) / m)
 def SibSpF(x, m):
-  return str((m - float(x)) / m)
+  return str(float(x) / m)
 def ParchF(x, m):
-  return str((m - float(x)) / m)
+  return str(float(x) / m)
 def FareF(x, m):
-  return str((m - float(x)) / m)
+  return str(float(x) / m)
 def EmbarkedF(x):
   if x == 'C': return '0'
   if x == 'S': return '1'
