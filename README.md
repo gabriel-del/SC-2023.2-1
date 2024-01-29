@@ -3,18 +3,6 @@
 ## Objetivo
 Prever se uma pessoa sobreviveria ou não
 
-## Etapas
-* Tratar os dados, pegar variáveis -> Rafael, Gabriel
-* tirar os nulos (n teve duplicatas) -> Lucas (ja fez)
-* KNN gerar código -> Tainah
-* plotar -> Thomas
-* testar e ver se as previsões batem (com dados separados)
-
-# Variáveis
-
-Survived,Pclass,Sex,Age,SibSp,Parch,Fare,Embarked
-
-
 ## Integrantes
 * Lucas Meirelles
 * Gabriel Del
@@ -25,8 +13,6 @@ Survived,Pclass,Sex,Age,SibSp,Parch,Fare,Embarked
 ## Database:
 [titanic dataset](https://www.kaggle.com/datasets/yasserh/titanic-dataset)
 
-## Especificações
-https://github.com/remarchese/DSdegree/tree/master/Modulo1/Aula11%20e%20projeto
 
 ## Premissas
 Privilegiam o uso de datasets simples, ou seja, conjunto de dados usualmente didáticos (Ex. iris, diabetes, Boston House, Cars, Mnist, Wine etc)
