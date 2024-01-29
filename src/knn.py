@@ -1,7 +1,7 @@
 import random
 
 class KNNClass():
-  def __init__(self, f, k=5):
+  def __init__(self, f, k=7):
     data = f[1:].copy()
     random.shuffle(data)
     delimiter = int(len(data) * 0.3)
@@ -26,8 +26,8 @@ class KNNClass():
   def predict(self):
     for p in self.data_test:
       target_list = [target for _, _,target in self.calculate_distances(p)]
-      vizinhos = target_list[:self.k]
-      self.target_test_guessed.append(max(set(vizinhos), key = vizinhos.count))
+      neighbors = target_list[:self.k]
+      self.target_test_guessed.append(max(set(neighbors), key = neighbors.count))
     return self.target_test_guessed
 
   def accuracy(self):
